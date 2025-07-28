@@ -61,7 +61,7 @@ from sklearn.metrics import accuracy_score
 Đây là một kỹ thuật cơ bản để xác định vị trí đối tượng. Một cửa sổ với kích thước xác định sẽ trượt qua tất cả các vị trí trên ảnh. Tại mỗi vị trí, phần ảnh bên trong cửa sổ sẽ được đưa vào mô hình phân loại đã huấn luyện để kiểm tra xem nó có chứa biển báo hay không.
 
 #### b. Kỹ thuật Image Pyramid
-Để phát hiện được các biển báo ở nhiều kích thước khác nhau, kỹ thuật Kim tự tháp ảnh được áp dụng. Kỹ thuật này tạo ra một chuỗi các phiên bản của ảnh gốc với kích thước giảm dần. Sau đó, thuật toán cửa sổ trượt sẽ được áp dụng trên mỗi ảnh trong kim tự tháp, giúp phát hiện cả những vật thể nhỏ.
+Để phát hiện được các biển báo ở nhiều kích thước khác nhau, kỹ thuật Image Pyramid được áp dụng. Kỹ thuật này tạo ra một chuỗi các phiên bản của ảnh gốc với kích thước giảm dần. Sau đó, thuật toán cửa sổ trượt sẽ được áp dụng trên mỗi ảnh trong kim tự tháp, giúp phát hiện cả những vật thể nhỏ.
 
 #### c. Hậu xử lý với Non-Maximum Suppression (NMS)
 Quá trình phát hiện có thể tạo ra nhiều khung giới hạn (bounding box) chồng chéo cho cùng một đối tượng. **Non-Maximum Suppression (NMS)** là một kỹ thuật hậu xử lý được sử dụng để giải quyết vấn đề này. NMS sẽ loại bỏ các khung giới hạn có điểm tin cậy (confidence score) thấp hơn và có độ chồng chéo (đo bằng **Intersection over Union - IoU**) cao với khung có điểm tin cậy cao nhất.
